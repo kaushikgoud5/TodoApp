@@ -1,0 +1,13 @@
+<div class="tasks-container">
+  <div class="tasks-label">
+    Today’s {{ action == 1 ? "Active" : "Completed" }} Tasks
+  </div>
+  <div class="current-date">{{ currentTime | date : "EEEE, d MMMM yyyy" }}</div>
+</div>
+<div *ngIf="action == 1">
+  <app-tasks-list [totalTodoTasks]="todoTasks"> </app-tasks-list>
+</div>
+<div *ngIf="action == 2">
+  <app-tasks-list [totalTodoTasks]="completedTodoTasks"></app-tasks-list>
+</div>
+<!-- <app-modal></app-modal> -->

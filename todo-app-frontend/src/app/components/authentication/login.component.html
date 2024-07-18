@@ -1,0 +1,94 @@
+<main>
+  <div class="container">
+    <div class="card" [ngClass]="isLoggeed ? 'card-signup' : 'card-signin'">
+      <h1 [ngStyle]="{ color: !isLoggeed ? '#ffffff' : '#BA5112' }">
+        To-Do App
+      </h1>
+      <p [ngStyle]="{ color: !isLoggeed ? '#ffffff' : '#251814' }">
+        Start organizing your life day by day
+      </p>
+      <form [formGroup]="loginReactiveForm">
+        <div class="input-group">
+          <input
+            type="text"
+            placeholder="Username"
+            formControlName="username"
+            required
+          />
+          <div
+            *ngIf="
+              loginReactiveForm.get('username')?.invalid &&
+              loginReactiveForm.get('username')?.touched
+            "
+          >
+            <small
+              class="fs-10 validation"
+              *ngIf="loginReactiveForm.get('username')?.errors?.['required']"
+            >
+              Username cannot be empty
+            </small>
+            <small
+              class="fs-10 validation"
+              *ngIf="loginReactiveForm.get('username')?.errors?.['noSpaceAllowed']"
+            >
+             Empty spaces are not allowed
+            </small>
+          </div>
+        </div>
+        <div class="input-group">
+          <input
+            [type]="!isShowPassword ? 'password' : 'text'"
+            placeholder="Password"
+            formControlName="password"
+            required
+          />
+          <span class="toggle-password" (click)="toggleShowPassword()">
+            <img
+              class="img-toggle-password"
+              *ngIf="!isShowPassword"
+              src="../../../assets/eye-slash.svg"
+              alt=""
+            />
+            <img
+              class="img-toggle-password"
+              *ngIf="isShowPassword"
+              src="../../../assets/eye.svg"
+              alt=""
+            />
+          </span>
+        </div>
+        <div
+          *ngIf="
+            loginReactiveForm.get('password').invalid &&
+            loginReactiveForm.get('password').touched
+          "
+        >
+          <small
+            class="fs-10 validation"
+            *ngIf="loginReactiveForm.get('password').errors?.['passwordInvalid']"
+          >
+            {{ loginReactiveForm.get('password')?.errors?.['passwordInvalid'] }}
+          </small>
+        </div>
+        <button
+          [ngClass]="!isLoggeed ? 'btn-signup' : 'btn-signin'"
+          (click)="onClickLogin(loginReactiveForm)"
+          [disabled]="loginReactiveForm.invalid"
+          type="button"
+          [ngStyle]="{ opacity: !loginReactiveForm.invalid ? '1' : '0.6' }"
+        >
+          {{ isLoggeed ? "Sign in" : "Sign Up" }}
+        </button>
+      </form>
+      <p>
+        {{ !isLoggeed ? "Already have an account?" : "Don’t have an account?" }}
+        <a
+          (click)="SwitchMode()"
+          [ngStyle]="{ color: !isLoggeed ? '#ffffff' : '#251814' }"
+        >
+          {{ !isLoggeed ? "Sign in" : "Create" }} <span>here</span>.
+        </a>
+      </p>
+    </div>
+  </div>
+</main>

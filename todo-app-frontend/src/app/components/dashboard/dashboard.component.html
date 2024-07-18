@@ -1,0 +1,4 @@
+
+<app-hero></app-hero>
+<app-tasks [todoTasks]="todoTasks" (loadTasks)="loadTodoTasks()" (onTaskChange)="loadTodoTasks()"  [completedTodoTasks]="completedTodoTasks" [totalTodoTasks]="tasks"></app-tasks>
+<app-modal (loadTasks)="loadTodoTasks()"></app-modal>

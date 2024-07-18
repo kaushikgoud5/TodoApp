@@ -1,0 +1,333 @@
+2024-07-06 11:56:14.101 +05:30 [INF] User profile is available. Using 'C:\Users\kaushik.n\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-06 11:56:14.718 +05:30 [INF] Now listening on: https://localhost:7032
+2024-07-06 11:56:14.720 +05:30 [INF] Now listening on: http://localhost:5176
+2024-07-06 11:56:14.726 +05:30 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-06 11:56:14.728 +05:30 [INF] Hosting environment: Development
+2024-07-06 11:56:14.730 +05:30 [INF] Content root path: C:\Users\kaushik.n\source\repos\TodoApp\TodoApp
+2024-07-06 11:56:16.711 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/index.html - null null
+2024-07-06 11:56:17.308 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/index.html - 200 null text/html;charset=utf-8 610.4151ms
+2024-07-06 11:56:17.369 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/_vs/browserLink - null null
+2024-07-06 11:56:17.369 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-06 11:56:17.395 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/_framework/aspnetcore-browser-refresh.js - 200 13750 application/javascript; charset=utf-8 29.8172ms
+2024-07-06 11:56:17.471 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/_vs/browserLink - 200 null text/javascript; charset=UTF-8 105.6025ms
+2024-07-06 11:56:17.675 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - null null
+2024-07-06 11:56:17.931 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 256.9733ms
+2024-07-06 11:56:33.987 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:56:33.987 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:56:33.987 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:56:34.026 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:56:34.027 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:56:34.027 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:56:34.051 +05:30 [INF] HTTP OPTIONS /api/Todo/2 responded 204 in 21.6145 ms
+2024-07-06 11:56:34.052 +05:30 [INF] HTTP OPTIONS /api/Todo/2 responded 204 in 17.9325 ms
+2024-07-06 11:56:34.092 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:56:34.052 +05:30 [INF] HTTP OPTIONS /api/Todo/2 responded 204 in 22.6414 ms
+2024-07-06 11:56:34.057 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - 204 null null 70.5512ms
+2024-07-06 11:56:34.101 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - 204 null null 114.4429ms
+2024-07-06 11:56:34.112 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:56:34.114 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - 204 null null 127.0182ms
+2024-07-06 11:56:34.667 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:56:34.751 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:56:35.369 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:56:38.938 +05:30 [INF] Executed DbCommand (150ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:56:39.192 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:56:39.216 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:56:39.290 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:56:39.295 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 4526.6476ms
+2024-07-06 11:56:39.298 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:56:39.303 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:56:39.310 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 5198.5239 ms
+2024-07-06 11:56:39.310 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:56:39.320 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:56:39.330 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:56:39.334 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 5258.4298ms
+2024-07-06 11:56:39.395 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:56:39.405 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:56:39.410 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:56:39.415 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 90.3019ms
+2024-07-06 11:56:39.419 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:56:39.420 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:56:39.428 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:56:39.429 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 130.9519 ms
+2024-07-06 11:56:39.435 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 146.0226ms
+2024-07-06 11:56:39.438 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:56:39.448 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:56:39.460 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:56:39.647 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:56:39.657 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:56:39.661 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:56:39.666 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 211.4317ms
+2024-07-06 11:56:39.668 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:56:39.670 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 242.2516 ms
+2024-07-06 11:56:39.674 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 256.3059ms
+2024-07-06 11:58:37.329 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7032/api/Auth/login - null null
+2024-07-06 11:58:37.343 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:37.350 +05:30 [INF] HTTP OPTIONS /api/Auth/login responded 204 in 6.3563 ms
+2024-07-06 11:58:37.360 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7032/api/Auth/login - 204 null null 31.5102ms
+2024-07-06 11:58:37.365 +05:30 [INF] Request starting HTTP/2 POST https://localhost:7032/api/Auth/login - application/json 62
+2024-07-06 11:58:37.377 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:37.529 +05:30 [INF] Failed to validate the token.
+Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+ ---> Microsoft.IdentityModel.Tokens.SecurityTokenMalformedException: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken.ReadToken(String encodedJson)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebToken..ctor(String jwtEncodedString)
+   at Microsoft.IdentityModel.JsonWebTokens.JsonWebTokenHandler.ReadToken(String token, TokenValidationParameters validationParameters)
+   --- End of inner exception stack trace ---
+2024-07-06 11:58:37.602 +05:30 [INF] Bearer was not authenticated. Failure message: IDX14100: JWT is not well formed, there are no dots (.).
+The token needs to be in JWS or JWE Compact Serialization Format. (JWS): 'EncodedHeader.EndcodedPayload.EncodedSignature'. (JWE): 'EncodedProtectedHeader.EncodedEncryptedKey.EncodedInitializationVector.EncodedCiphertext.EncodedAuthenticationTag'.
+2024-07-06 11:58:37.607 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.AuthController.Login (TodoApp)'
+2024-07-06 11:58:37.618 +05:30 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(DTOS.UserToLoginDTO) on controller TodoApp.Controllers.AuthController (TodoApp).
+2024-07-06 11:58:37.772 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Users] AS [u]
+        WHERE [u].[Username] = @__username_0) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:37.818 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__userToLoginDTO_Username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[IsDeleted], [u].[ModifiedBy], [u].[ModifiedOn], [u].[Password], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Token], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__userToLoginDTO_Username_0
+2024-07-06 11:58:37.906 +05:30 [INF] Executed DbCommand (6ms) [Parameters=[@__username_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [u].[UserId], [u].[CreatedBy], [u].[CreatedOn], [u].[IsDeleted], [u].[ModifiedBy], [u].[ModifiedOn], [u].[Password], [u].[RefreshToken], [u].[RefreshTokenExpiryTime], [u].[Token], [u].[Username]
+FROM [Users] AS [u]
+WHERE [u].[Username] = @__username_0
+2024-07-06 11:58:38.210 +05:30 [INF] Executing OkObjectResult, writing value of type 'DTOS.UserToReturnDTO'.
+2024-07-06 11:58:38.219 +05:30 [INF] Executed action TodoApp.Controllers.AuthController.Login (TodoApp) in 594.7632ms
+2024-07-06 11:58:38.223 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.AuthController.Login (TodoApp)'
+2024-07-06 11:58:38.226 +05:30 [INF] HTTP POST /api/Auth/login responded 200 in 848.8697 ms
+2024-07-06 11:58:38.232 +05:30 [INF] Request finished HTTP/2 POST https://localhost:7032/api/Auth/login - 200 null application/json; charset=utf-8 867.1459ms
+2024-07-06 11:58:38.271 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:38.273 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:38.272 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:38.288 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:38.291 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:38.301 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:38.303 +05:30 [INF] HTTP OPTIONS /api/Todo/2 responded 204 in 15.0666 ms
+2024-07-06 11:58:38.305 +05:30 [INF] HTTP OPTIONS /api/Todo/2 responded 204 in 14.1478 ms
+2024-07-06 11:58:38.310 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - 204 null null 38.7008ms
+2024-07-06 11:58:38.325 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - 204 null null 52.5622ms
+2024-07-06 11:58:38.307 +05:30 [INF] HTTP OPTIONS /api/Todo/2 responded 204 in 6.0695 ms
+2024-07-06 11:58:38.323 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:38.353 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - 204 null null 81.688ms
+2024-07-06 11:58:38.356 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:38.367 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:38.369 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:38.374 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:38.389 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:38.394 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:38.397 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:38.402 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 28.6679ms
+2024-07-06 11:58:38.404 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:38.405 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:38.410 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:38.412 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 55.8487 ms
+2024-07-06 11:58:38.415 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:38.420 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 96.7657ms
+2024-07-06 11:58:38.422 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:38.439 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:38.448 +05:30 [INF] Executed DbCommand (5ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:38.455 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:38.458 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:38.465 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 27.4681ms
+2024-07-06 11:58:38.469 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:38.470 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:38.476 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:38.480 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 70.0135 ms
+2024-07-06 11:58:38.483 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:38.487 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 83.7214ms
+2024-07-06 11:58:38.490 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:38.504 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:38.510 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:38.518 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:38.520 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:38.524 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 20.3699ms
+2024-07-06 11:58:38.528 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:38.531 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 55.3148 ms
+2024-07-06 11:58:38.536 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 66.8164ms
+2024-07-06 11:58:43.102 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:43.117 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:43.119 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:43.120 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:43.124 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:43.135 +05:30 [INF] Executed DbCommand (7ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:43.140 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:43.141 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:43.144 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 20.8409ms
+2024-07-06 11:58:43.147 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:43.149 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:43.150 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 33.5862 ms
+2024-07-06 11:58:43.159 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:43.165 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 63.5299ms
+2024-07-06 11:58:43.167 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:43.176 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:43.182 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:43.191 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:43.198 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:43.199 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:43.203 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 21.7658ms
+2024-07-06 11:58:43.205 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:43.207 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 48.2352 ms
+2024-07-06 11:58:43.210 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 61.964ms
+2024-07-06 11:58:44.039 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:44.046 +05:30 [INF] Request starting HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:44.050 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:44.058 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:44.060 +05:30 [INF] HTTP OPTIONS /api/Todo/2 responded 204 in 10.2991 ms
+2024-07-06 11:58:44.062 +05:30 [INF] HTTP OPTIONS /api/Todo/2 responded 204 in 4.0526 ms
+2024-07-06 11:58:44.067 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - 204 null null 29.1185ms
+2024-07-06 11:58:44.073 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:44.074 +05:30 [INF] Request finished HTTP/2 OPTIONS https://localhost:7032/api/Todo/2 - 204 null null 28.4349ms
+2024-07-06 11:58:44.087 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:44.100 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:44.106 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:44.111 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:44.117 +05:30 [INF] Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:44.122 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:44.124 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:44.128 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 17.4224ms
+2024-07-06 11:58:44.132 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:44.133 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:44.139 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:44.142 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 54.3773 ms
+2024-07-06 11:58:44.145 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:44.151 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 77.9955ms
+2024-07-06 11:58:44.155 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:44.172 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:44.185 +05:30 [INF] Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:44.193 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:44.196 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:44.201 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 29.4612ms
+2024-07-06 11:58:44.205 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:44.209 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 69.5881 ms
+2024-07-06 11:58:44.215 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 83.2004ms
+2024-07-06 11:58:45.162 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:45.167 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:45.170 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:45.171 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:45.175 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:45.188 +05:30 [INF] Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:45.191 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:45.192 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:45.195 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 19.8454ms
+2024-07-06 11:58:45.198 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:45.198 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:45.199 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 32.6789 ms
+2024-07-06 11:58:45.204 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:45.207 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 44.9294ms
+2024-07-06 11:58:45.208 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:45.215 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:45.219 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:45.226 +05:30 [INF] Executed DbCommand (3ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:45.232 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:45.235 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:45.239 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 19.9869ms
+2024-07-06 11:58:45.241 +05:30 [INF] Request starting HTTP/2 GET https://localhost:7032/api/Todo/2 - null null
+2024-07-06 11:58:45.242 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:45.246 +05:30 [INF] CORS policy execution successful.
+2024-07-06 11:58:45.249 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 45.2417 ms
+2024-07-06 11:58:45.252 +05:30 [INF] Executing endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:45.257 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 59.7445ms
+2024-07-06 11:58:45.260 +05:30 [INF] Route matched with {action = "GetTodos", controller = "Todo"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTodos(Int32) on controller TodoApp.Controllers.TodoController (TodoApp).
+2024-07-06 11:58:45.271 +05:30 [INF] not found in cache ,fetching it from db!!
+2024-07-06 11:58:45.277 +05:30 [INF] Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatedBy], [t].[CreatedOn], [t].[DateTime], [t].[Description], [t].[IsDeleted], [t].[ModifiedBy], [t].[ModifiedOn], [t].[Status], [t].[Title], [t].[UserId]
+FROM [Todos] AS [t]
+WHERE [t].[UserId] = @__id_0 AND [t].[IsDeleted] = CAST(0 AS bit)
+ORDER BY CASE
+    WHEN [t].[Status] = 2 THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+2024-07-06 11:58:45.283 +05:30 [INF] Tasks Fetced Successfully from cache
+2024-07-06 11:58:45.286 +05:30 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DAL.Entities.Todo, Data, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-06 11:58:45.290 +05:30 [INF] Executed action TodoApp.Controllers.TodoController.GetTodos (TodoApp) in 19.2021ms
+2024-07-06 11:58:45.294 +05:30 [INF] Executed endpoint 'TodoApp.Controllers.TodoController.GetTodos (TodoApp)'
+2024-07-06 11:58:45.298 +05:30 [INF] HTTP GET /api/Todo/2 responded 200 in 51.6457 ms
+2024-07-06 11:58:45.303 +05:30 [INF] Request finished HTTP/2 GET https://localhost:7032/api/Todo/2 - 200 null application/json; charset=utf-8 62.2217ms

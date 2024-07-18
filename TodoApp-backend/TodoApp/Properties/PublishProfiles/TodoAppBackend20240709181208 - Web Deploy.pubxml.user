@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project>
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA4bDVYDwockeI7H1h/jHekAAAAAACAAAAAAADZgAAwAAAABAAAAB2zU550p3Lchy6qsP6BTidAAAAAASAAACgAAAAEAAAAIy45ha1gYLbyjO369Fh+a2AAAAAC0gvVVjbcqsaIEtLeDoa5RpWMxBhpEv9UZ0m2z/LZeLydg7lfawCObg2ze1nJE7Y5iYMWM8ImA6mBGJAsAqm7R9w5aaVvHmPZgloeR20mFA/RmrDfKK59uQMEdViPfcJisHG3sEjMlVhnEnzawW5WY//F9N1cZsSTKf1s9jMBTkUAAAAbkNd1i7UCiXFMgLaX2nLTh4SKvo=</EncryptedPassword>
+    <History>True|2024-07-09T12:52:17.9310230Z;True|2024-07-09T18:17:28.8720627+05:30;</History>
+    <LastFailureDetails />
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="DefaultConnection">
+      <Value>Data Source=todoappdbserver.database.windows.net,1433%3bInitial Catalog=TodoApp_db%3bUser ID=kaushikgoud5%3bPassword=K%40ushik2002</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+  <ItemGroup>
+    <EFMigrations Include="DAL.DataContext.AppDbContext">
+      <Value>Data Source=todoappdbserver.database.windows.net,1433%3bInitial Catalog=TodoApp_db%3bUser ID=kaushikgoud5%3bPassword=K%40ushik2002</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

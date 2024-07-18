@@ -1,0 +1,44 @@
+<div class="detail-container " #detailBox *ngIf="todoActiveTask.length>0"  [ngStyle]="{'background':taskAction==1?'white':'#EDB046'}">
+  <div class="details" *ngFor="let task of todoActiveTask" >
+    <div class="title-timeline">
+      <div class="header">
+         <div class="title">{{task.title}}</div>
+      <div class="close" (click)="onClickCloseDetailBox()" class="">❌</div>
+      </div>
+     
+      <div class="timeline" [ngStyle]="{'color':taskAction==1?'#B5B5B5':'#BA5112'}">Added {{calculateHours(task.dateTime) }}</div>
+    </div>
+    <div class="description">
+      <div class="description-title">Description</div>
+      <div class="description-text" >
+      {{task.description}}
+      </div>
+    </div>
+    <div class="detail-footer">
+      <div class="inp-checkbox">
+        <img
+            *ngIf="taskAction==1"
+          src="../../../../assets/material-symbols_check-box-outline (1).svg"
+          (click)="onClickChangeStatus(task.id)"
+          alt=""
+        />
+        <img
+            *ngIf="taskAction==2"
+          src="../../../../assets/material-symbols_check-box.svg"
+          (click)="onClickChangeStatus(task.id)"
+          alt=""
+        />
+      </div>
+      <div class="footer-left">
+        <div class="add-img" *ngIf="taskAction==1">
+          <img src="../../../../assets/carbon_edit.svg" (click)="onClickEdit(task.id)" alt="" />
+        </div>
+        <div class="delete-img" (click)="onClickDelete(task.id)">
+          <img *ngIf="taskAction==1"  src="../../../../assets/ant-design_delete-outlined.svg" alt="" />
+          <img *ngIf="taskAction==2" src="../../../../assets/ant-design_delete-outlined (1)-dark.svg" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-modal></app-modal>

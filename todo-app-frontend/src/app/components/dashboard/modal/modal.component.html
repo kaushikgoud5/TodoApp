@@ -1,0 +1,44 @@
+<div class="modal" *ngIf="isModalActive">
+
+  <div class="modal-container" >
+    <form action="" [formGroup]="taskForm">
+    <div class="modal-title">
+      <input type="text" name="" formControlName="title"  id="" placeholder=" Add title" />
+      <div
+            *ngIf="
+              taskForm.get('title')?.invalid &&
+              taskForm.get('title')?.touched
+            "
+          >
+            <small
+              class="fs-10 validation"
+              *ngIf="taskForm.get('title')?.errors?.['required']"
+            >
+              Title cannot be empty
+            </small>
+          </div>
+    </div>
+    <div class="modal-description">
+      <input type="text" placeholder=" Add description"  formControlName="description"/>
+      <div
+            *ngIf="
+              taskForm.get('description')?.invalid &&
+              taskForm.get('description')?.touched
+            "
+          >
+            <small
+              class="fs-10 validation"
+              *ngIf="taskForm.get('description')?.errors?.['required']"
+            >
+              Description cannot be empty
+            </small>
+          </div>
+    </div>
+    <div class="modal-btns">
+      <button class="cancel-btn" (click)="onClickCancel(taskForm)" type="button">Cancel</button>
+      <button class="save-btn" [disabled]="taskForm.invalid" [ngStyle]="{'opacity':!taskForm.invalid?'1':'0.7'}" #saveBtn (click)="onClickSave(taskForm)" type="button">Save</button>
+    </div>
+  </form>
+</div>
+
+</div>

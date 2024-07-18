@@ -1,0 +1,123 @@
+@import "../../../../styles.scss";
+.tasks-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rem 3rem 0rem 4rem;
+  .tasks-label {
+    font-size: 19px;
+    font-weight: 600;
+    color: $black;
+  }
+}
+.date-delete {
+  display: flex;
+  gap: 7rem;
+  font-size: 14px;
+  .delete-all {
+    color: $brown;
+    cursor: pointer;
+  }
+  .current-date {
+    color: $black;
+  }
+}
+
+.task-list-container {
+  display: flex;
+  gap: 6rem;
+
+  .tasks {
+    width: 80%;
+    height: calc(100vh - 30vh);
+    overflow: auto;
+    scrollbar-width: thin;
+  }
+
+  .task-status-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding-right: 3rem;
+    text-align: center;
+    color: $white;
+
+    .task-status {
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      width: 188px;
+      height: 200px;
+      border-radius: 12px;
+      justify-content: center;
+
+      &.completed-task-percentage {
+        background: $brown;
+      }
+
+      &.active-task-percentage {
+        background: $yellow;
+      }
+
+      .task-status-percentage {
+        font-weight: 700;
+        font-size: 30px;
+      }
+
+    }
+  }
+}
+@media (max-width: 425px) {
+  .tasks-container{
+    display: flex;
+    margin: 20px 20px;
+    .tasks-label {
+    font-size: 12px;
+  }
+  }
+  .date-delete{
+    font-size: 10px;
+    gap: 1rem;
+  }
+  .task-list-container {
+    display: block;
+    .tasks {
+        overflow: hidden;
+        width: 100%;
+    }
+  }
+  .task-list-container .task-status-container{
+    display: none;
+  }
+
+ 
+ }
+ @media (max-width:866px) and (min-width:425px){
+  .tasks-container{
+    width: 100vw;
+    margin: 20px 20px;
+    .tasks-label{
+      font-size: 16px;
+    }
+  }
+  .date-delete {
+    display: flex;
+    gap: 1rem;
+    font-size: 12px;
+  }
+  .task-list-container{
+    display: block;
+    .tasks{
+    overflow: hidden;
+      width: 100%;
+    
+  }
+  }
+  
+  
+} 
+ @media (max-width: 866px){
+  .task-list-container .task-status-container{
+    display: none;
+  }
+
+ }

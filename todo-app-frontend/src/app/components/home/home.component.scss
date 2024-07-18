@@ -1,0 +1,23 @@
+main {
+    display: flex;
+}
+
+.sidebar {
+    display: flex;
+}
+
+.dashboard {
+    width: 100vw;
+}
+
+
+@media (max-width:426px) {
+    main{
+        display: block;
+    }
+  }
+@media (max-width:866px) {
+  main{
+      display: block;
+  }
+} 

@@ -1,0 +1,24 @@
+<div class="task-lists">
+  <!-- <div class="no-task" *ngIf="totalTodoTasks.length === 0">
+    No Tasks Avaliable
+  </div> -->
+  <div *ngFor="let task of totalTodoTasks" class="task">
+    <div
+      class="tasks-list"
+      (click)="onClickDisplayDetails(task.id)"
+      [ngStyle]="{ background: task.status==2 ? '#edb046' : 'white' }"
+    >
+      <div class="inp-checkbox">
+        <img *ngIf="task.status==2" src="../../../../assets/Vector.svg" alt="" />
+        <img
+          *ngIf="task.status==1"
+          src="../../../../assets/material-symbols_check-box-outline.svg"
+          alt=""
+        />
+      </div>
+      <div class="task-name">{{ task.title }}</div>
+    </div>
+    <app-detail *ngIf="task.id===clickedTaskId && (action==1 || action==2)" [taskAction]="action"  [todoActiveTask]="clickedTask" (loadtask)="loadTodoTasks()"></app-detail>
+</div>
+
+</div>

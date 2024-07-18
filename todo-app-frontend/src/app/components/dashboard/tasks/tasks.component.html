@@ -1,0 +1,30 @@
+<div class="tasks-container">
+  <div class="tasks-label">Today’s Tasks</div>
+  <div class="date-delete">
+    <div class="delete-all" (click)="onClickDeleteAll()">Delete All</div>
+    <div class="current-date">{{currentTime | date:'EEEE, d MMMM yyyy'}}</div>
+  </div>
+</div>
+
+<div class="task-list-container">
+  <div class="tasks" > 
+    <app-tasks-list  [totalTodoTasks]="totalTodoTasks" ></app-tasks-list>
+  </div>
+  <div class="task-status-container">
+    <div class="task-status completed-task-percentage">
+      <div class="task-status-img">
+        <img src="../../../../assets/icon-park-solid_check-one.svg" alt="" />
+      </div>
+
+      <div class="task-status-percentage">{{getTodoPercentage(completedTodoTasks)}}%</div>
+      <div class="task-status-label">Completed Tasks</div>
+    </div>
+    <div class="task-status active-task-percentage">
+      <div class="task-status-img">
+        <img src="../../../../assets/icon-park-solid_time.svg" alt="" />
+      </div>
+      <div class="task-status-percentage">{{getTodoPercentage(todoTasks)}}%</div>
+      <div class="task-status-label">Active Tasks</div>
+    </div>
+  </div>
+</div>

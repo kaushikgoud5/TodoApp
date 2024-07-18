@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/bdc9d761-c00d-46f2-91b2-c1856604ab19/resourceGroups/Api20240601125550ResourceGroup/providers/Microsoft.Web/sites/todoAppAngular",
+    "appService.deploySubpath": "dist\\todo-app\\browser"
+}
